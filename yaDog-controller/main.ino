@@ -1,13 +1,21 @@
+String cacheString = "";
+bool cacheStringComplete = false;
 void setup() {
-  pass();
+  delay(1000);
+  Serial.begin(9600);
 }
 
 void loop() {
-  pass();
+  if (cacheStringComplete) {
+    cacheString = "";
+    cacheStringComplete = false;
+  }
 }
 
 void serialEvent() {
-  pass();
+  if (inChar == '\n') {
+    cacheStringComplete = true;
+  }
 }
 
 void executeBootEvent(){
