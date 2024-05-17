@@ -1,3 +1,7 @@
+#define PWR_PIN 20
+#define RST_PIN 21
+#define TIMEOUT 10000
+
 String cacheString = "";
 bool cacheStringComplete = false;
 void setup() {
